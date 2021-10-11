@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-5 ">
+                <div class="d-flex justify-content-end">
+                    <form action="/edit/<%= posts._id %>" method="POST">
+                        <button type="submit" class="btn btn-success">Edit</button>
+                    </form>
+
+                    <form action="/delete" method="POST">
+                        <input name="postId" value="<%= posts._id %>" hidden>
+                        <button type="submit" style="margin-left: 20px;" class="btn btn-danger">Delete</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+
+    <h1>
+        <%=posts.title%>
+    </h1>
+    <p>
+        <%=posts.content%>
+    </p>
+
+
+
+    <%- include("partials/footer"); -%>
